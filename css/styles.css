@@ -1,0 +1,174 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #444;
+    --highlight: #fff3a0;
+    --font-size: 20px;
+    --maxwidth: 760px;
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #eaeaea;
+    --accent: #aaa;
+    --highlight: #7a6a00;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, serif;
+    font-size: var(--font-size);
+    line-height: 1.7;
+    margin: 0;
+    transition: 0.2s;
+}
+
+/* O padding esquerdo foi levemente aumentado para 30px para acomodar o texto lateral */
+.container {
+    max-width: var(--maxwidth);
+    margin: auto;
+    padding: 40px 20px 140px 30px; 
+}
+
+
+/* Nova Letra Capitular (Drop cap) */
+.dropcap:first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 4px;
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-weight: bold;
+    color: #1e5a7a;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+body.dark .dropcap:first-letter {
+    color: #4da6ff;
+}
+
+
+/* Segmentos para karaoke */
+.segment {
+    margin-bottom: 1em;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.active {
+    background: var(--highlight);
+}
+
+
+/* Controles */
+.controls {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    z-index: 1000;
+}
+
+button {
+    border: none;
+    padding: 8px 10px;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* Estilo do Ícone de Áudio (quando oculta o texto) */
+#audioIcon {
+    text-align: center;
+    font-size: 6em;
+    padding: 60px 0;
+    color: var(--accent);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+/* Autoria a 90 graus na lateral esquerda */
+.author {
+    position: fixed;
+    left: 5px; /* Fica bem no cantinho esquerdo */
+    top: 20%; /* Alinha ao meio da tela */
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+    font-size: 0.75rem;
+    color: var(--accent);
+    opacity: 0.25; /* Muito discreto */
+    margin: 0;
+    font-style: italic;
+    z-index: 999;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    user-select: none; /* Evita que o aluno selecione esse texto sem querer no mobile */
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Quando passa o mouse (no PC), ele fica nítido */
+.author:hover {
+    opacity: 1;
+}
+
+
+/* Player Fixo no bottom com estilo aprimorado */
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--bg);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08); 
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+body.dark .player {
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #222; 
+}
+
+audio {
+    width: 100%;
+    max-width: var(--maxwidth); 
+    outline: none;
+}
+
+body.dark audio {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+
+/* --- AJUSTES PARA MOBILE --- */
+@media (max-width: 600px) {
+    .container {
+        /* Aumenta o respiro na esquerda no celular para o capítulo não encostar na autoria */
+        padding-left: 35px; 
+    }
+    
+    .author {
+        font-size: 0.65rem; /* Fonte um pouquinho menor em telas pequenas */
+        left: 2px; /* Mais colado na borda */
+    }
+
+    .controls {
+        /* Deixa os botões menores para caber melhor na tela do celular */
+        transform: scale(0.9);
+        transform-origin: top right;
+    }
+}

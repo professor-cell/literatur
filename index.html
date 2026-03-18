@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Biblioteca de Alemão - Prof Bruno</title>
+    
+    <style>
+        /* Estilos específicos para a página inicial */
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .book-title {
+            color: #1e5a7a;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            margin-top: 50px;
+            font-family: "Playfair Display", "Times New Roman", serif;
+        }
+
+        body.dark .book-title {
+            color: #4da6ff;
+        }
+
+        .chapter-list {
+            list-style-type: none; /* Tira as bolinhas da lista */
+            padding: 0;
+            margin: 0;
+        }
+
+        .chapter-list li {
+            margin: 10px 0;
+        }
+
+        .chapter-list a {
+            display: block;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.05); /* Fundo cinza clarinho */
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.2s;
+            font-size: 1.1rem;
+        }
+
+        body.dark .chapter-list a {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chapter-list a:hover {
+            background: var(--highlight);
+            color: #000; /* Garante que o texto fique preto e legível no amarelo */
+            transform: translateX(5px); /* Dá um leve pulinho para a direita ao passar o mouse */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="controls">
+        <button onclick="document.body.classList.toggle('dark')">dark</button>
+    </div>
+
+    <div class="container">
+        <h1>📚 Leituras</h1>
+
+        <h2 class="book-title">Die Nachbarn</h2>
+        <ul class="chapter-list">
+            <li><a href="die-nachbarn/Kapitel_01/kapitel_01.html">Kapitel 1: Georg</a></li>
+            <li><a href="die-nachbarn/Kapitel_02/kapitel_02.html">Kapitel 2: Die Nachbarn (Em breve)</a></li>
+            <li><a href="#">Kapitel 3: Die Entdeckung (Em breve)</a></li>
+        </ul>
+
+        <h2 class="book-title">Livro 2: Abenteuer in Berlin</h2>
+        <ul class="chapter-list">
+            <li><a href="#">Kapitel 1: Die Ankunft (Em breve)</a></li>
+            <li><a href="#">Kapitel 2: Verloren in der Stadt (Em breve)</a></li>
+        </ul>
+
+    </div>
+
+    <p class="author">Página desenvolvida por prof Bruno</p>
+
+</body>
+
+</html>
