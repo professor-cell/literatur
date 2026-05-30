@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../css/styles.css">
+	<script src="../../js/script.js" defer></script>
+	<title>Kapitel 2: Die Nachbarn</title>
+</head>
+
+<body>
+
+	<div class="controls">
+		<button onclick="toggleDark()">dark</button>
+		<button onclick="fontPlus()">A+</button>
+		<button onclick="fontMinus()">A-</button>
+		<button onclick="toggleText()" id="btnToggleText">hide text</button>
+	</div>
+
+	<div class="container" id="text">
+		<h1>Kapitel 2: Die Nachbarn</h1>
+
+        <div id="audioIcon" style="display: none;">
+			🎧
+		</div>
+
+        <div id="textContent">
+			<p class="segment dropcap" data-start="3" data-end="43">
+				Herr und Frau Beier sind seit vier Jahren Georgs Nachbarn. Frau Beier ist vielleicht 50 Jahre alt. Sie ist sehr klein, dünn und hat graue Haare. Schön ist sie nicht, aber sie ist immer sehr nett zu Georg und seiner Schwester. Vor einigen Jahren schenkte sie Georg immer Schokolade. Jetzt schenkt sie nur noch seiner Schwester welche. Aber letztes Jahr hat sie ihm zu Weihnachten einen Krimi geschenkt, den er noch nicht kannte. Daher weiß er, dass Frau Beier und er etwas gemeinsam haben: die Leidenschaft für Detektivromane.
+			</p>
+
+		</div>
+
+        <p class="author">Página desenvolvida por Bruno Coutinho</p>
+	</div>
+
+	<div class="player">
+		<audio id="audio" controls>
+			<source src="Kapitel_02.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+</body>
+
+</html>
